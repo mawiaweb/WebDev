@@ -1,0 +1,46 @@
+<html>
+<head>
+
+	<style>
+
+	h1, p, h3{
+	text-align: center;
+}
+hr{
+	background-color: green;
+	height: 5px;
+}
+
+	</style>
+
+</head>
+<body>
+	<h1>WDV321 Advanced Javascript </h1> <br><hr>
+<p><button onclick="dateFunction()">Click Button to display date</button></p>
+
+<p><button onclick="hideDate()">Click Button to Hide Date</button></p>
+
+<p id="demo">What is today's date?</p>
+
+
+<script>
+
+function dateFunction(){
+	var d = new Date();
+	var n = d.toDateString();
+	document.getElementById("demo").innerHTML = n;
+	document.getElementById("demo").style.visibility ="";
+}
+
+
+
+function hideDate(){
+	document.getElementById("demo").style.visibility ="hidden";
+}
+
+</script>
+
+
+
+</body>
+</html>
