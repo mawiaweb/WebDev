@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Droppable - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  
+  #draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; 
+     border: solid 10px yellow;
+     
+     }
+
+
+  #droppable { width: 190px; height: 190px; padding: 0.5em; float: left; margin: 10px; 
+
+    border: solid black;
+    background-color: white;
+
+  }
+
+  .ui-state-highlight{
+    color: red;
+    font-weight: bold;
+  }
+
+ 
+  
+
+  
+#droppableTwo  { width: 190px; height: 190px; padding: 0.5em; float: left; margin: 10px; 
+
+    border: solid black;
+    background-color: white;
+
+  }
+
+
+ #droppableTwo p{
+ 	text-align:center;
+ }
+
+ #droppable {
+ 	text-align:center;
+ }
+
+ body{
+ 	background-color:#669999;
+ }
+
+  #main-container{
+    height: 400px;
+    width: 100%;
+    padding-top: 60px;
+   
+
+  }
+
+  /*#droppable{
+    width: 30px;
+    height: 30px;
+    background-color: gray;
+  }*/
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#draggable" ).draggable();
+    $( "#droppable,#droppableTwo" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+      }
+    });
+  } );
+  </script>
+</head>
+<body>
+
+  <!-- Note: " , " allows you to add a new function in Jquery -->
+
+<div id="main-container"> 
+  <div id="draggable" class="ui-widget-content">
+  <p>Drag me to my target</p>
+  </div>
+
+
+
+  <div id="droppable" class="ui-widget-header">
+  <p>Drop it here</p>
+  </div>
+
+<div id="droppableTwo" class="ui-widget-header">
+  <p>Drop it here</p>
+  </div>
+
+
+ <div id="droppableTwo" class="ui-widget-header">
+  <p>Drop it here</p>
+  </div>
+
+</div> <!-- end main-container -->
+</body>
+</html>
