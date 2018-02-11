@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<!-- bootstrap link starts -->
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+
+<!-- bootstrap link ends -->
+
+<style>
+
+ h2 {
+    font-family: Lobster, Monospace;
+  }
+
+hr{
+	border: solid green 1px;
+}
+</style>
+
+<script>
+// 1. Provide a currency formatting function for this page.
+		function testFormat(inNum)
+		{
+			
+			if (isNaN(inNum))
+			{
+				//alert("result of isNaN" );   //The input amount is a non numeric string. It is or contains letters and/or spaces
+				return "Invalid amount"
+			}
+			else
+			{
+				inNum = parseFloat(inNum);		//Convert input value into a floating point number.  toFixed() requires a number value to work with
+				return  '$' + inNum.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+			}
+		}//end testFormat()
+
+		//Global scope variables for use with both functions
+
+
+	
+		var itemPrice= 0;
+		var itemQuantity= 0;
+		var priceTotal = 0;
+
+		function itemTotal(){
+
+			var itemPrice= 0;
+		var itemQuantity= 0;
+		var priceTotal = 0;
+
+			itemPrice = document.getElementById("item").value;
+			itemQuantity = document.getElementById("quantity").value;
+			priceTotal = itemPrice * itemQuantity;
+
+			document.getElementById("totalCost").innerHTML = testFormat(priceTotal);
+		}
+
+
+
+
+</script>
+
+<body>
+	<div class="container"> <!--container starts-->
+
+	<h2>Unit-1 JavaScript Review</h2>
+<p>Today is:</p>
+	<p id="date"></p>
+	<script>document.getElementById("date").innerHTML = Date();</script>
+
+<hr></hr>
+
+<form>
+
+	Item Price: <br>
+	<input type="text" id="item" name="item" value="">
+	<br>
+
+	Item Quantity:<br>
+	<input type="text" id="quantity" name="quantity">
+	<br><br>
+
+	<input type="button" value="Submit" onclick="itemTotal()" class="btn btn-primary">
+
+
+</form>
+
+<p>Your total price will be: <span id="totalCost">Result goes here!	</span></p>
+<p id="displayHere"></p>
+
+<hr>
+
+<p id="TeamMembers"></p>
+		<script>
+			var footBall = ["Team 1: Mawia", "Team 2: Roluta", "Team 3: Chhuanga", "Team 4: John Thawng"];
+			var text = "";
+			var i;
+			for (i = 0; i < footBall.length; i++) {
+				text += footBall[i] + "<br>";
+
+			}
+			document.getElementById('TeamMembers').innerHTML = text;
+		</script>
+
+</div><!--container ends -->
+</body>
+</html>
