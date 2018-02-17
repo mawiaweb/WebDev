@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" href="styles/jquery-form.css" />
+	<link rel="stylesheet" href="styles/jquery-ui.css" />
+	
+	<script src="scripts/jquery.js"></script>
+	<script src="scripts/jquery-ui.js"></script>
+	
+	 <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+  
+ <script>
+  $( function() {
+    var tooltips = $( "[title]" ).tooltip({
+      position: {
+        my: "left top",
+        at: "right+5 top-5",
+        collision: "none"
+      }
+    });
+    $( "<button>" )
+      .text( "Show help" )
+      .button()
+      .on( "click", function() {
+        tooltips.tooltip( "open" );
+      })
+      .insertAfter( "form" );
+  } );
+  </script>
+</head>
+<body>
+<h2>Web Development 321</h2>
+<form>
+
+	<fieldset>
+			<legend>Register Online Now</legend>
+			<div class="fieldWrap">
+
+				Enter your first name: <input type="text" id="txtFirstName" name="txtFristName" title=" First name required." />
+
+			</div>
+
+			<div class="fieldWrap">
+				Enter your last name: <input type="text" id="txtLastName" name="txtLastName" title="Last name required. "/>
+			</div>
+
+			<div class="fieldWrap">
+				
+					Subject:
+					
+							<select id="itemName">
+								<option>Please One</option>
+								<option>Intro JavaScript</option>
+								<option>Digital Marketing</option>
+								<option>HTML5</option>
+							</select>
+				
+			
+			</div>
+			<div class="fieldWrap">
+				What day do you want to start? <input type="text" id="datepicker" name="txtDescript" title="Click it to pick a date."/>
+			</div>
+			<div class="fieldWrap">
+				<input type="submit" id="btnsubmit" value="Submit" />
+			</div>
+
+	</fieldset>
+
+</form>
+
+<div class="footerWrapper">
+			<div class="footer">
+			&copy; 2018 Lal Mawia (Mawia) 
+			</div>
+		</div>
+</body>
+</html>
+
+
