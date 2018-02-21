@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Form Validation with Regular Expressions</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+.fieldWrap{
+	margin: 20px 0 0 0;
+}
+ label{ 
+ float: left; 
+ width: 20em; 
+ margin-right: 1em; 
+ text-align: right;
+}
+.fieldWrap{
+	overflow:hidden;
+}
+input{
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+p{
+	margin: 0;
+	padding: 0;
+	display: inline;
+	white-space: nowrap;
+}
+
+
+</style>
+
+<script>
+	function validateEmail(inputText1){
+		var mailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+		if(inputText1.value.match(mailformat))
+		{
+			$(".formPara1").html("<h3>Valid Email!</h3>");
+			document.validation.email.focus();
+			return (true);
+		}
+
+		$(".formPara1").html ("<h3>invalid email!</h3>");
+		document.validation.email.focus();
+		return(false);
+	};
+
+	function validatePhone(inputText2){
+		var number = /^([0-9]( |-)?)?(\(?[0-9]{3}\)?|[0-9]{3})( |-)?([0-9]{3}( |-)?[0-9]{4}|[a-zA-Z0-9]{7})$/;
+    if(inputText2.value.match(number))
+    	{
+
+    	$(".formPara2").html ("<h3>Valid phone number!</h3>");
+    	document.validation.phone.focus();
+    	return (true);
+    	}
+
+    	$(".formPara2").html ("<h3>invalid phone number!</h3>");
+    	document.validation.phone.focus();
+    	return (false);
+
+	};
+
+
+	function validateZip(inputText3){
+		var zipCode = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
+		if(inputText3.value.match(zipCode))
+		{
+
+		$(".formPara3").html ("<h3>valid zipcode!</h3>");
+		document.validation.zip.focus();
+		return (true);
+		}
+		$(".formPara3").html ("<h3>invalid zipcode!</h3>");
+		document.validation.zip.focus();
+		return (false);
+
+	};
+</script>
+</head>
+<body>
+<h2>Jquery Form Validation with Regular Expressions</h2>
+
+<form name="validation" method="post" action="phpformHandler.php">
+
+		
+		<legend>Enter Your Information</legend>
+		<div class="fieldWrap">
+			<label>Enter your email address:</label>
+			<input type="text" name="email" class="emailInput" onchange="validateEmail(document.validation.email)" required> <p class="formPara1"></p>
+		</div><!--end fieldWrap-->
+					<br>
+
+		<div class="fieldWrap">
+			<label>Enter your phone number: </label>
+			<input type="text" name="phone" class ="phoneInput" onchange="validatePhone(document.validation.phone)" required> <p class="formPara2"></p>
+		</div><!--end fieldWrap-->
+					<br>
+
+		<div class="fieldWrap">
+			<label>Enter your zip code: </label>
+			<input type="text" name="zip" class="zipcodeInput" onchange="validateZip(document.validation.zip)" required> <p class="formPara3"></p>
+		</div><!--end fieldWrap-->
+					<br>
+
+					<div class="container">
+				 		<input type = "button" class="btn btn-info" value = "Submit">
+				 	    <input type = "reset" class ="btn btn-info" value = "Reset">
+				  	</div>
+		
+
+					
+				 	
+</form>
+
+
+</body>
+</body>
+</html>
