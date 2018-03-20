@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	label{
+		display: block;
+	
+	}
+	fieldset ol{
+		padding: 1em 1em 0 1em;
+		list-style: none;
+	}
+
+	fieldset li{
+		padding-bottom: 1em;
+	}
+
+	#honeypotDiv{
+		display: none;
+	}
+
+	</style>
+	<script>
+
+		function validateMyForm()
+		{
+			if(!document.getElementById("honeypot").value){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+
+	</script>
+</head>
+<body>
+<form id="form1" onsubmit="return validateMyForm();" name="form1" method="post" action="formHandler.php">
+
+	<fieldset>
+		<legend>Form Handler</legend>
+		<ol>
+			<li>
+				<label for="firstName"> First Name:</label>
+				<input type="text" name="firstName" id="firstName" />
+			</li>
+			<li>
+				<label for="lastName">Last Name:</label>
+				<input type="text" name="lastName" id="lastName" />
+			</li>
+			<li>
+				<label for="school">School:</label>
+				<input type="text" name="school" id="school" />
+			</li>
+
+			<p><strong>How did you hear about us?</strong><br><br>
+
+			<label>
+				<input type="radio" name="about" value="facebook" id="about_0" checked />	Facebook</label>
+			<label>
+				<input type="radio" name="about" value="magazine" id="about_1" />
+			Magazine</label>
+
+			<label>
+				<input type="radio" name="about" value="television" id="about_2" />
+			Television</label>
+			</p>
+
+			<p>
+				<h3>Printed Version and Ebook</h3>
+				<label>
+					<input type="checkbox" name="ebook[]" value="readOnline" id="course_0" />
+				Ebook</label>
+
+				<label>
+					<input type="checkbox" name="ebook[]" value="printedVersion" id="course_1">
+				Book</label>
+			</p>
+
+			<p>
+			<h3>Select your textbook</h3>
+			
+				<select name="bookName">
+					<option value="book">Javascript</option>
+					<option value="book">HTML</option>
+					<option value="book">PHP</option>
+				</select>
+			</p>
+
+			 <div id="honeypotDiv">
+				<input type="text" name="honeypot" id="honeypot" />
+			</div>
+
+			<p>
+				<input type="submit" name="button" id="button" value="Submit" />
+				<input type="reset" name="button2" id="button2" value="Reset" />
+			</p>
+		</ol>
+	</fieldset>
+			
+	
+	
+
+
+
+</form>	
+</body>
+</html>
