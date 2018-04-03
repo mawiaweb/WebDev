@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<title>WDV321 Advanced Javascript Dynamic Form Example</title>
+
+<script>
+
+var productsArray = new Array("Pen","Paper","Pencil");
+
+var colorsArray = new Array("Red","Yellow","Green");
+
+var option = "";
+
+function product(){
+	var x = document.getElementById("displayItems");
+	x.remove(x);
+	x.remove(x);
+	x.remove(x);
+
+for (var i=0;i<productsArray.length;i++){
+
+option = document.createElement("option");
+option.text = productsArray[i];
+x.add(option);
+}
+
+}
+
+function color(){
+	var x = document.getElementById("displayItems");
+	x.remove(x);
+	x.remove(x);
+	x.remove(x);
+
+for (var i=0;i<colorsArray.length;i++){
+	
+ option = document.createElement("option");
+ option.text = colorsArray[i];
+ x.add(option);
+}
+}
+</script>
+
+
+
+
+</head>
+
+<body>
+	<form>
+<h1>WDV321 Advanced Javascript</h1>
+<h3>Dynamic Form Example</h3>
+<p>
+  Add Products
+  <input type="radio" name="select" id="addProducts" value="addProducts" onchange="product()" />
+</p>
+<p>Add Colors 
+  <input type="radio" name="select" id="addColors" value="addColors" onchange="color()" />
+</p>
+<p>Result Drop Down Box</p>
+
+  <select name="displayItems" id="displayItems">
+
+  </select>
+
+</form>
+
+
+
+
+
+
+
+</body>
+</html>
