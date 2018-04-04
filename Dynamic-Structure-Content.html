@@ -1,0 +1,185 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV321 Advanced Javascript</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/69A742D3-AA14-6E4B-91B9-A5622BED5D44/main.js" charset="UTF-8"></script>
+ <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+#mySelect, #myOption, #myPara, #myLabel, #myRadio, #myLabelR{
+  margin: 20px;
+  padding: 30px;
+  color: white;
+  background-color: #00cccc;
+  font-size: 20px;
+
+}
+#main-container{
+  background-color: #00cccc;
+  border: 3px solid green;
+  margin: 10px 25px 0px 25px;
+  padding-left: 80px;
+
+}
+
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+<div id="main-container">
+<h1>WDV321 Advanced Javascript</h1>
+<h2>Dynamic Form Structure - Assignment</h2>
+<p>Use this page as the basis for your assignment. Given the drop down list provided on this page please do the following things.</p>
+<p>
+  <label>Please Select your reason for contactin us.
+    <select name="contactType" id="contactType" onchange="selected()">
+      <option value="C" id="C">Complaints</option>
+      <option value="T" id="T">Technical Problems</option>
+      <option value="P" id="P">Product Issues</option>
+    </select>
+  </label>
+
+  <h3 id="#mySelect"></h3>
+  <h3 id="#myPara"></h3>
+  <h3 id="myRadio"></h3>
+</p>
+
+<script>
+
+
+var C =$("#C").val();
+var T =$("#T").val();
+var P =$("#P").val();
+function selected(){
+
+
+  var e = document.getElementById("contactType");
+  var selected_option = e.options[e.selectedIndex].value;
+  if(selected_option==C){
+    complaint();
+  }
+  if(selected_option==T){
+    technical();
+  }
+  if(selected_option==P){
+    product();
+  }
+}
+
+function complaint(){
+  remove();
+
+  var selectList = document.createElement("select");
+  selectList.id = "mySelect";
+  document.body.append(selectList);
+  var complaints = ["excellent", "Very Good", "Fair", "Bad"]
+  for (var i=0;i<complaints.length; i++){
+    var option = document.createElement("option");
+    option.id = "myOption";
+    option.text = complaints[i];
+    option.value = complaints[i];
+    selectList.add(option);
+  }
+}
+
+
+function technical(){
+  remove();
+
+  var problems = ["Tire Sitting Out", "No A/C", "Transmission Broke", "Tail Lights are Out"];
+  for (var i=0;i<problems.length;i++){
+    var para = document.createElement("input");
+    para.type ="checkbox";
+    para.id = "myPara";
+    var label = document.createElement("input");
+    label.type ="label";
+    label.id= "myLabel";
+    label.value = problems[i];
+    document.body.append(para);
+    document.body.appendChild(label);
+    var br = document.createElement("br");
+    document.body.appendChild(br);
+
+  }
+}
+
+function product(){
+  remove();
+
+  var issues = ["Damaged Package", "Broken", "Wasn't Delivered", "Item Missing"];
+
+  for(var i=0;i<issues.length;i++){
+    var radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "radio";
+    radio.id = "myRadio";
+    var label = document.createElement("input");
+    label.type ="label";
+    label.id = "myLabelR";
+    label.value = issues[i];
+    document.body.append(radio);
+    document.body.appendChild(label);
+    var br = document.createElement("br");
+    document.body.appendChild(br);
+  }
+}
+
+function remove(){
+  var x = document.getElementById("myPara");
+  var label = document.getElementById("myLabel");
+  $("#myPara").remove();
+  $("#myLabel").remove();
+  $("#myPara").remove();
+  $("#myLabel").remove();
+  $("#myPara").remove();
+  $("#myLabel").remove();
+  $("#myPara").remove();
+  $("#myLabel").remove();
+
+  var v = document.getElementById("selectList");
+  var option = document.getElementById("myOption");
+  $("#myRadio").remove();
+  $("#myLabelR").remove();
+  $("#myRadio").remove();
+  $("#myLabelR").remove();
+  $("#myRadio").remove();
+  $("#myLabelR").remove();
+  $("#myRadio").remove();
+  $("#myLabelR").remove();
+
+  var y = document.getElementById("selectList");
+  var option = document.getElementById("myOption");
+  $("#mySelect").remove();
+  $("#myOption").remove();
+  $("#mySelect").remove();
+  $("#myOption").remove();
+  $("#mySelect").remove();
+  $("#myOption").remove();
+  $("#mySelect").remove();
+  $("#myOption").remove();
+
+}
+</script>
+
+
+
+
+
+<ol>
+  <li>When  Complaints are selected please dynamically create and display a new drop down list that includes at least four options of your choice.</li>
+  <li>When Technical Problems are selected please dynamically create and display at least four types of problems with an associated checkbox.</li>
+  <li>When Product Issues aer selected please dynamically create and display at least four types options as a grouped set of radio buttons. </li>
+  <li>When a new option is selected your script should remove any of the dynamic content. </li>
+</ol>
+<p>&nbsp;</p>
+</div><!--end main-container-->
+</body>
+</html>
