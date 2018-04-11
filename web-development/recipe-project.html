@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      
+    <!--starts here-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- end here-->
+
+
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #a3c2c2;
+    
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color:#e0e0eb;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+#container{
+  background-color:#a3c2c2 ;
+  width: 100%px;
+  margin: 0 auto;
+}
+#Cookie, #Muffin, #Cooker{
+text-align: center;
+}
+h2{
+	color: white;
+	text-decoration: underline;
+
+}
+
+ #para3{
+ 	width: 900px;
+ 	padding-left:300px;
+ }
+
+#lastcont, #firstcont{
+  width: 500px;
+  text-align: left;
+  background-color: white;
+  padding: 20px;
+  border-radius: 30px;
+}
+#secondcont{
+  width: 800px;
+  text-align: left;
+  background-color: white;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+
+h2{
+  text-align: center;
+  color: black;
+  padding-bottom: 20px;
+}
+</style>
+<!--starts here -->
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <script src="recipe-project.js"></script>
+
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+
+</script>
+
+<script src="recipe-project.js"></script>
+
+<script>
+
+ // RECIPE.JS FUNCTIONS FOR DISPLAY
+        $(document).ready(function () {
+            $(".accordion").accordion({
+                heightStyle: "content"
+            });
+
+            displayCookie();
+            $("#cookie_serves").append(cookie_serves);
+
+            $("#doublecookie").click(function () {
+                doubleCookie();
+                $("#cookie").empty();
+                displayCookie();
+            });
+
+            $("#halfcookie").click(function () {
+                halfCookie();
+                $("#cookie").empty();
+                displayCookie();
+            });
+
+            $("#resetcookie").click(function () {
+                resetCookie();
+                $("#cookie").empty();
+                displayCookie();
+            });
+          });
+
+
+           $(document).ready(function () {
+            $(".accordion").accordion({
+                heightStyle: "content"
+            });
+
+            displayMuffin();
+            $("#muffin_serves").append(muffin_serves);
+
+            $("#doublemuffin").click(function () {
+                doubleMuffin();
+                $("#muffin").empty();
+                displayMuffin();
+            });
+
+            $("#halfmuffin").click(function () {
+                halfMuffin();
+                $("#muffin").empty();
+                displayMuffin();
+            });
+
+            $("#resetmuffin").click(function () {
+                resetMuffin();
+                $("#muffin").empty();
+                displayMuffin();
+            });
+          });
+
+            $(document).ready(function () {
+            $(".accordion").accordion({
+                heightStyle: "content"
+            });
+
+
+            displayChili();
+            $("#chili_serves").append(chili_serves);
+
+            $("#doublechili").click(function () {
+                doubleChili();
+                $("#chili").empty();
+                displayChili();
+            });
+
+            $("#halfchili").click(function () {
+                halfChili();
+                $("#chili").empty();
+                displayChili();
+            });
+
+            $("#resetchili").click(function () {
+                resetChili();
+                $("#chili").empty();
+                displayChili();
+            });
+          
+          });
+
+
+</script>
+
+</head>
+<body>
+
+<div id="container">
+		
+		
+			 <div class="tab">
+			  <button class="tablinks" onclick="openCity(event, 'Cookie')">Cookie</button>
+			  <button class="tablinks" onclick="openCity(event, 'Muffin')">Muffin</button>
+			  <button class="tablinks" onclick="openCity(event, 'Cooker')">Slow Cooker Chilli</button>
+			 </div>
+		
+	
+
+<div id="Cookie" class="tabcontent">
+
+  <p><img src="images/cookieRecipe.jpeg"></p><br><br>
+
+<button type="button" class="btn btn-primary" name="cookie" id="doublecookie">Double</button>
+<button type="button" class="btn btn-primary" name="cookie" id="resetcookie">Regular</button>
+<button type="button" class="btn btn-primary" name="cookie" id="halfcookie">Half</button><br><br>
+
+  <h3>Cookie</h3><br><br>
+       <span id="cookie">Result goes here:</span>
+          
+       <center><div id="firstcont">
+        <h2>Directions</h2>
+        <p>Heat oven to 375ºF. Mix sugars, butter, vanilla and egg in large bowl. Stir in flour, baking soda and salt (dough will be stiff). Stir in nuts and chocolate chips. 
+Drop dough by rounded tablespoonfuls about 2 inches apart onto ungreased cookie sheet. 
+Bake 8 to 10 minutes or until light brown (centers will be soft). Cool slightly; remove from cookie sheet. Cool on wire rack.</p>
+       </div></center>
+           
+
+ </div><!--cookie container  ends-->
+
+
+
+<div id="Muffin" class="tabcontent">
+ 
+    <p><img src="images/muffin.jpeg"></p> <br><br>
+
+	<button type="button" class="btn btn-primary" name="muffin" id="doublemuffin">Double</button>
+			<button type="button" class="btn btn-primary" name="muffin" id="resetmuffin">Regular</button>
+	<button type="button" class="btn btn-primary" name="muffin" id="halfmuffin">Half</button><br><br>
+ 	
+<h3>Muffin</h3><br><br>
+       <span id="muffin">Result goes here:</span>
+
+  <center><div id="secondcont">
+    <h2>Directions</h2>
+    <p>Preheat your oven to 425°F. Lightly grease the cups of a standard 12-cup muffin pan. Or line the cups with papers, and grease the papers.
+Blend together the dry ingredients.
+Beat the liquid ingredients together — milk, oil or butter, eggs, and vanilla — until light.
+Pour the wet ingredients into the dry ingredients. Take a fork or wire whisk and blend the two briefly — about 20 seconds should do it. The secret to light and tender muffins lies in blending together the liquid and dry ingredients gently. It's OK to leave some lumps that look as if they want more stirring; they really don't. So, no matter how hard it is, resist the impulse.
+Fill the cups of the muffin pan two-thirds to three-quarters full. Sprinkle with sparkling white sugar, if desired.
+Bake the muffins for 15 to 20 minutes, or until a toothpick inserted into the middle of one of the center muffins comes out clean. Remove them from the oven, and as soon as you can handle them turn them out of the pan onto a rack to cool.</p>
+
+  </div></center>
+
+
+  </div><!--muffin container end-->
+
+
+
+
+	<div id="Cooker" class="tabcontent">
+  		<p><img src="images/slow-cooker-chilli3.jpeg"></p><br><br>
+
+
+  	<button type="button" class="btn btn-primary" name="chili" id="doublechili">Double</button>
+		<button type="button" class="btn btn-primary" name="cider" id="resetchili">Regular</button>
+		<button type="button" class="btn btn-primary" name="cider" id="halfchili">Half</button><br><br>
+    <div id="con">
+    <h3>Slow Cooker Chili</h3><br>
+    <span id="chili">Recipe:</span>
+
+    </div>
+    <center><div id="lastcont">
+      <h2>Directions</h2>
+<p>Place the beef in a skillet over medium heat, and cook until evenly brown. Drain grease.
+Place the beef in a slow cooker, and mix in onion, celery, green bell pepper, garlic, tomato puree, kidney beans, and cannellini beans. Season with chili powder, parsley, salt, basil, oregano, black pepper, and hot pepper sauce.
+Cover, and cook 8 hours on Low.</p>
+</div></center>
+	</div> <!--cookie end -->
+
+
+  
+
+   </div><!--end main container-->  
+
+</body>
+</html> 
