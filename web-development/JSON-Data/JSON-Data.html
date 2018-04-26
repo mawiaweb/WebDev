@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+
+	<style>
+	body{
+		background-color: lightblue;
+	}
+	div{
+		margin: 0 auto;
+		padding: 0px 40px 0 40px;
+	}
+	</style>
+	<script>
+		var BookOne = {
+			"ISBN":"0-596-00016-2",
+			"Title":"Java and XML",
+			"Price":"$39.95",
+			"Publisher":"O'Reilly &amp; Associates",
+			"Copyright":"2000",
+			"Authors":{
+					"Fname":"Brett",
+					"Lname":"McLaughlin",
+					"Price":"22.00"
+			}
+		};
+		var BookTwo = {
+			"ISBN":"1-861003-32-3",
+			"Title":"Professional Visual Basic 6 XML",
+			"Price":"$49.99",
+			"Publisher":"Wrox Press",
+			"Copyright":"2000",
+			"Authors":[
+				{
+					"Fname":"James",
+					"Lname":"Britt"
+				},
+				{
+					"Fname":"Tuen",
+					"Lname":"Duynstee"
+				}
+			]
+		};
+		var textbooks = {"Book1":BookOne,"Book2":BookTwo};
+		var jsonBookOne = JSON.stringify(BookOne);
+		var jsonBookTwo= JSON.stringify(BookTwo);
+		var jsonLibrary = JSON.stringify(textbooks);
+	</script>
+  </head>
+
+  <body>
+  	<div>
+	<h2>JSON Data</h2>
+  
+	<h3>JSON Book One:</h3>
+	<script>document.write(jsonBookOne)</script>
+	
+	<h3>JSON Book Two:</h3>
+	<script>document.write(jsonBookTwo)</script>
+	
+	<h3>JSON Book Three:</h3>
+	<script>document.write(jsonLibrary)</script>
+</div>
+  </body>
+ </html>
