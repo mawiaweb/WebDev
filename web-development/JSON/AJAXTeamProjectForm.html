@@ -1,0 +1,189 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AJAX Team Project</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Nosifer" rel="stylesheet">
+	<script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/69A742D3-AA14-6E4B-91B9-A5622BED5D44/main.js" charset="UTF-8"></script><script src="jquery-3.2.1.js"></script>
+	<style type="text/css">
+		body {
+			min-height: 1500px;
+			background: -moz-linear-gradient(315deg, rgba(0,0,0, 0.8), rgba(67, 67, 67, 0.9) 100%)no-repeat;
+			background: -webkit-linear-gradient(315deg, rgba(0,0,0, 0.8), rgba(67, 67, 67, 0.9) 100%)no-repeat;
+			background: linear-gradient(to 315deg, rgba(0,0,0, 0.7), rgba(67, 67, 67, 0.8) 100%)no-repeat;
+			background-size: cover;
+			font-family: 'Montserrat Alternates', sans-serif;
+			letter-spacing:1.2px;
+			text-align:center;}
+		#container{
+			width:60%;
+			margin:0 auto;
+			margin-top:2rem;
+			padding:2em;
+			background-color: rgba(67, 67, 67, 0.5);
+			box-shadow: 0px 0px 6px 1px rgba(75, 75, 75, 0.5);}
+		h2{
+			color:rgba(178, 115, 0,0.8);
+			font-family: 'Nosifer', cursive;
+			font-size:2.5em;}
+		p{
+			font-size:1.1em;
+			padding:.3em 8em;}
+		img {
+			width: 100%;
+			height: auto;}
+		select{
+			padding:1%;
+			background:transparent;
+			border:2px solid black;
+			color:black;}
+		option{
+			font-family: 'Montserrat Alternates', sans-serif;
+			letter-spacing:1.2px;
+			font-size:1.1em;}
+		#formButtons{
+			text-align:center;}
+		input{
+			letter-spacing:1.2px;
+			font-size:1.1em;
+			background:transparent;
+			border:2px solid black;
+			padding:1%;
+			transition: .4s ease-in-out;}
+		input:hover{
+			background:black;
+			border:none;
+			font-family: 'Montserrat Alternates', sans-serif;
+			color:#b27300;}
+		@media screen and (max-width: 992px) {
+			p {
+				padding:2%;}
+		}
+		@media screen and (max-width: 768px) {
+			#container{
+				width:90%;
+				margin:0 auto;}
+		}
+		@media screen and (min-width: 1400px){
+			p {
+				padding:.3em 10em;}
+		}
+	</style>
+    <script>
+	$(document).ready(function () {
+	
+		//takes in candy dropdown data and changes the dropdown menu to display those candy options
+        function printCandy(selection) {
+            var arrayLength = selection.candySelection.length;
+            var options;
+            for (i = 0; i < arrayLength; i++){
+                options += "<option value='" + selection.candySelection[i].val + "'>" + selection.candySelection[i].name + "</option>";
+            }
+            $("#treatSelect").html(options);
+        }
+
+		//takes in the cupcake dropdown data and changes the dropdown menu to display those cupcake options
+         function printCupcake(selection) {
+            var arrayLength = selection.cupcakeSelection.length;
+            var options;
+            for (i = 0; i < arrayLength; i++) {
+                options += "<option value='" + selection.cupcakeSelection[i].val + "'>" + selection.cupcakeSelection[i].name + "</option>";
+            }
+            $("#treatSelect").html(options);
+        }
+
+
+        
+		//takes given data and displays the items description, price and image in inner html
+        function displayData(data) {
+            $("#desc").html(data.desc);
+            $("#price").html(data.price);
+            $("#image").html("<img src='" + data.img + "' />");
+        }
+		
+		//clears inner html item description, price and image
+        function clearData() {
+            $("#desc").html("");
+            $("#price").html("");
+            $("#image").html("");
+        }
+		
+		  //on change of dropdown, checks for which item was selected by value, then makes ajax call to retrieve selected items data, then calls the displayData() function
+            $("#treatSelect").change(function () {
+                if ($(this).val() == 'none') {
+                    clearData();
+                }
+                if ($(this).val() == 'choc') {
+                    $.getJSON("http://erinavance.info/courses/WDV321/WDV321Homework/AJAXTeamProjectForm/choc.json", function (data, status) {
+                        displayData(data);
+                    });
+                }
+                if ($(this).val() == 'van') {
+                    $.getJSON("http://erinavance.info/courses/WDV321/WDV321Homework/AJAXTeamProjectForm/van.json", function (data, status) {
+                        displayData(data);
+                    });
+                }
+                if ($(this).val() == 'red') {
+                    $.getJSON("http://erinavance.info/courses/WDV321/WDV321Homework/AJAXTeamProjectForm/red.json", function (data, status) {
+                        displayData(data);
+                    });
+                }
+                if ($(this).val() == 'snick') {
+                    $.getJSON("http://erinavance.info/courses/WDV321/WDV321Homework/AJAXTeamProjectForm/snick.json", function (data, status) {
+                        displayData(data);
+                    });
+                }
+                if ($(this).val() == 'twix') {
+                    $.getJSON("http://erinavance.info/courses/WDV321/WDV321Homework/AJAXTeamProjectForm/twix.json", function (data, status) {
+                        displayData(data);
+                    });
+                }
+                if ($(this).val() == 'skit') {
+                    $.getJSON("http://erinavance.info/courses/WDV321/WDV321Homework/AJAXTeamProjectForm/skit.json", function (data, status) {
+                        displayData(data);
+                    });
+                }
+            });
+			
+		 /* makes ajax call to retrieve data from selection.json,
+			if candy button is clicked it clears previous displayed inner html data and changes the dropdown menu to display candy options,
+			if cupcake button is clicked it clears previous displayed inner html data and changes the dropdown menu to display cupcake options
+		 */
+           $.getJSON("http://erinavance.info/courses/WDV321/WDV321Homework/AJAXTeamProjectForm/selection.json", function (data, status) {
+                printCupcake(data);
+                $("#candyButton").click(function () {
+                    clearData();
+                    printCandy(data);
+                });
+                $("#cupcakeButton").click(function () {
+                    clearData();
+                    printCupcake(data);
+                });
+            });     
+    });
+    </script>
+</head>
+
+<body>
+   
+		<h2>TRICK OR TREAT</h2>
+		<h3>WDV321 Advanced Javascript - AJAX Team Project</h3>
+		<h4>Team Members - Ethan Sutherland, Erin Vance & Haley Curtis</h4>
+		<form name="form1" method="post" action="">
+			<div id="container">
+				<h3><em>Make your choice:</em></h3> 
+				<p id="formButtons">
+					<input type="button" name="candyButton" id="candyButton" value="Candy">
+					<input type="button" name="cupcakeButton" id="cupcakeButton" value="Cupcake">
+				</p>
+				<label>
+					<select name="treatSelect" id="treatSelect">
+
+					</select>
+				</label>
+				<p><span id="image"></span></p>
+				<p><em>Description: </em><br><span id="desc"></span></p>
+				<p><em>Price: </em><br><span id="price"></span></p>
+			</div>
+		</form>
+</body>
+</html>
