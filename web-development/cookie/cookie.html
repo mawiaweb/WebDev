@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		homCounter();
+		function homCounter()
+		{
+			var pageViews = getCookie("counter");
+
+			if(!pageViews)
+			{
+				pageViews = 1; 
+				document.cookie = "priorUrl=" + document.referrer + ";path=/";
+			}
+
+			else{
+				pageViews = parseInt(pageViews) + 1;
+			}
+			setCookie("counter", pageViews, 3);
+		}
+
+	// setting a cooke using w3schools
+	function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+	
+// getting cookie value
+
+function getCookie(cname) {
+	var cvalue = null;
+	var findCookie = document.cookie + ";";
+    var findName = cname + "=";
+    var end;
+     if(findCookie.length > 0)
+     {
+     	var start = findCookie.indexOf(findName);
+     	if(start != -1)
+
+     	{
+     		start = start + findName.length;
+     		end = findCookie.indexOf(";", start);
+     		if(end == -1)
+     			end == findCookie.length;
+     		cvalue = findCookie.substring(start, end);
+     	}
+     }
+
+    return cvalue;
+}
+
+console.log(getCookie("counter"));
+console.log(getCookie("priorUrl"));
+console.log(getCookie("authCookies"))
+	</script>
+</head>
+<h2>Assignment: Cookie Handling</h2>
+<p><a href="about.html">About Page</a></p>
+
+<p><input type="button" value="Create Cookie" id="secureCookie" onclick="setCookie('authCookies', 'true', 180);"></p>
+<body>
+
+</body>
+</html>
