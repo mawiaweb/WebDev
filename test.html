@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+
+html, body{
+font-family: 'Libre Baskerville', serif;
+background-color: #A9A9A9;
+text-align: center;
+min-width: 320px;
+}
+
+
+#main-container {
+  background-color:  rgb(211,211,211);
+  margin: 0 auto;
+  border-radius: 4px;
+  width: 75%;
+  max-width: 900px;
+  padding: 10px;
+  padding-top: 20px;
+  border: 2px solid silver;
+  
+}
+
+header {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.label{
+  display: inline-block;
+  text-align: right;
+  width: 40%;
+  padding: 5px;
+  vertical-align: top;
+  margin-top: 10px;
+}
+
+div.comment-area{
+display: inline-block;
+position: relative;
+bottom: 20px;
+padding-top: 20px;
+}
+
+.right {
+  display: inline-block;
+  text-align: left;
+  width: 48%;
+  vertical-align: middle;
+}
+
+.box{
+	margin: 0 auto;
+	width: 0 auto;
+	text-align: left;
+	display:inline-block;
+}
+
+#description{
+	text-align: center;
+	font-size: 1.3em;
+	position: relative;
+	bottom: 20px;
+}
+
+.inputbox{
+  height: 20px;
+  width: 280px;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #c0c0c0;
+  border-radius: 2px;
+}
+ .ratings, 
+input[type="checkbox"] { 
+  float: left; 
+  margin-right: 10px;
+
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.3); /* IE */
+  -moz-transform: scale(1.3); /* FF */
+  -webkit-transform: scale(1.3); /* Safari and Chrome */
+  -o-transform: scale(1.3); /* Opera */
+  padding: 20px;
+}
+
+#submit, #reset {
+background-color: #757575;
+  border-radius: 4px;
+  color: white;
+  font-size: 1em;
+  height: 30px;
+  width: 90px;
+  border: 0px solid;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+
+}
+
+.dropdown {
+  height: 35px;
+  width: 140px;
+  padding: 5px;
+  margin: 10px;  
+  margin-top: 15px;
+  border: 1px solid #c0c0c0;
+  border-radius: 2px;
+}
+
+.radio, .checkbox {
+  position: relative;
+  left: -43px;
+  margin-left: 10px;
+  display: block;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 833px){
+	.inputbox{
+		width: 80%;
+	}
+
+	select{
+		width: 90%;
+	}
+
+
+}
+
+
+@media (max-width: 520px) {
+  .label {
+    width: 100%;
+    text-align: left;
+  }
+  .right {
+    width: 80%;
+    float: left;
+  }
+  .inputbox, .box {
+    width: 100%;
+  }
+  select {
+    width: 100%;
+  }
+}
+</style>
+
+
+</head>
+<body>
+<header>Survey Form</header>
+<div id="main-container">
+	<p id="description">Let us know how we can improve Mizocoder</p>
+	<form action="/action_page.php">
+		<div id="mainTab">
+			<div class="label">
+				<label for="name">Name</label>
+			</div><!--label-->
+			<div class="right">
+				<input id="name" placeholder="Your name" required class="inputbox" autofocus="">
+			</div><!--end right -->
+		</div><!--mainTab-->
+
+		<div id="mainTab">
+			<div class="label">
+				<label for="email">Email</label> 
+			</div><!--end label-->
+			<div class="right">
+				<input id="email" placeholder="Your email" required class="inputbox">
+			</div><!--emd right-->
+		</div><!--end mainTab-->
+
+		<div id="mainTab">
+			<div class="label">
+				<label for="number-age">Age</label>
+			</div><!--end label-->
+			<div class="right">
+				<input type="number" name="age" id="datepicker" min="1" max="125" class="inputbox" placeholder="Age">
+			</div><!--end right-->
+ 		</div><!--end mainTab-->
+
+ 		<div id="mainTab">
+ 			<div class="label">
+ 				<label for="startDate">Date you started</label>
+ 			</div><!--end label-->
+ 			<div class="right">
+ 				<input type="date" name="course" id="datepicker" class="inputbox" placeholder="Start Date">
+ 			</div><!--end rigth-->
+ 		</div><!--end mainTabl-->
+
+ 		<div id="mainTab">
+ 			<div class="label">
+ 				<label for="endDate">Date you finished</label>
+ 			</div><!--end label-->
+ 			<div class="right">
+ 				<input type="date" name="course" id="end" class="inputbox" placeholder="Start Date">
+ 			</div><!--end rigth-->
+ 		</div><!--end mainTabl-->
+
+
+ 		<div id="mainTab"><!--mainTab starts here-->
+ 			<div class="label">
+ 				<label for="post">Which course did you take?</label>
+ 			</div><!--end label-->
+ 			<div class="right">
+ 				<select id="dropdown" name="post" required class="dropdown">
+ 					  <option disabled="" value="">Selection an option</option>
+				      <option value="student">HTML</option>
+				      <option value="job">CSS</option>
+				      <option value="learner">JavaScript</option>
+				      <option value="preferNo">PHP</option>
+				      <option value="other">Content Management</option>
+				      <option value="other">WordPress</option>
+				      <option value="other">Photoshop</option>
+ 				</select><!--end choice-->	
+ 			</div><!--end right-->
+ 		</div><!--end mainTab-->
+
+ 		<div id="mainTab"><!--mainTab starts here-->
+ 			<div class="label">
+ 				<label for="userRating">How would you rate the course?</label>
+ 			</div>
+ 			<div class="right">
+ 				<ul style="list-style: none;">
+ 					<li class="radio"><label>Three (being very good)<input type="radio" name="radio" vlaue="1" class="ratings" ></label></li>
+ 				
+ 					<li class="radio"><label>Two (being good)<input type="radio" name="radio" vlaue="1" class="ratings" ></label></li>
+ 			
+ 					<li class="radio"><label>Three (being very bad)<input type="radio" name="radio" vlaue="1" class="ratings" ></label></li>
+ 				</ul>
+ 			</div><!--end right -->
+ 		</div><!--end mainTab-->			
+ 				
+ 			
+	
+
+		<div id="mainTab">
+			<div class="label">
+				<label for="most-like">How did you hear about Mizocoder</label>
+			</div><!--end label-->
+			<div class="right">
+				<select id="most-like" name="mostlike" class="dropdown">
+					<option disabled=""> Selection an option</option>
+					<option value="challenge">Internet</option>
+					<option value="community">Friends</option>
+					<option value="opensource">Colleague</option>
+				</select>
+			</div><!--end right -->
+		</div><!--end mainTab-->
+
+		<div id="mainTab">
+			<div class="label">
+				<label for="label">Please check all the courses you have taken on Mizocoder</label>
+			</div><!--end label-->
+			<div class="right">
+				<ul style="list-style: none">
+					<li class="checkbox"><label><input type="checkbox" name=""  class="ratings">HTML</label></li>
+					<li class="checkbox"><label><input type="checkbox" name=""  class="ratings">CSS</label></li>
+					<li class="checkbox"><label><input type="checkbox" name=""  class="ratings">JavaScript</label></li>
+					<li class="checkbox"><label><input type="checkbox" name=""  class="ratings">PHP</label></li>
+					<li class="checkbox"><label><input type="checkbox" name=""  class="ratings">Content Management</label></li>
+					<li class="checkbox"><label><input type="checkbox" name=""  class="ratings">Photoshop</label></li>
+					<li class="checkbox"><label><input type="checkbox" name=""  class="ratings">WordPress</label></li>
+					
+				</ul>
+			</div><!--end right -->
+
+		</div><!--end mainTab-->
+
+		
+
+
+			
+		<div id="mainTab">	
+			<div class="comment-area">
+				<label for="comments">We will be happy to hear your thoughts and suggestion</label>
+			</div><!--end label-->
+
+			 <div class="comment-box">
+				<textarea rows="5" class="box" cols="50" maxlength="170" placeholder="Your comment goes here..."></textarea>
+			</div>
+		</div><!--end mainTab-->
+
+		<button id="submit" type="submit">Submit</button>
+		<button id="reset" type="reset">Reset</button>
+			
+ 	</form><!--end form-->
+</div><!-- end main-container-->
+</body>
+</html>    
+
+
+
+		
+		
+	
+		
+			
+		
