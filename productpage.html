@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product Landing Page</title>
+	<!--
+	Camper's Name: Lal Mawia
+	Assignment Project: Product Landing Page
+	-->
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+	<style>
+			@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background-color: #f0eeec;
+				clear: both;
+				width: 100%;
+			}
+
+			#main-container{
+				position: relative;
+			}
+			#img-header{
+				max-width: 60px;
+				width: 100%;
+				float: left;
+			}
+			.logo{
+				width: 80vw;
+				float: left;
+				position: relative;
+				bottom: 10px;
+				font-weight: bold;
+				font-size: 2em;
+			}
+
+			nav{
+				font-size: 1.2em;
+			}
+
+			nav ul{
+				width: 60vw;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				}
+
+				nav ul a{
+					text-decoration: none;
+					color:black;
+					font-weight: 900;
+					padding: 20px 30px;
+				}
+
+				li{
+					list-style: none;
+				}
+
+				#header{
+					display: flex;
+					position: fixed; 
+					width: 100%;
+					min-height: 100px;
+					padding: 0px 20px;
+					display: flex;
+					justify-content: space-around;
+					background-color: silver;
+					align-items: center;
+					/*position: relative;*/
+
+					
+					}
+
+				header ul li a:hover{
+					text-decoration: underline;
+
+
+					}
+
+			
+
+				#container{
+					/*max-width:1000px;*/
+					width: 100%;
+					margin: 0 auto;
+					background-color: #f0eeec;
+					padding-bottom: 170px;
+
+					
+				}
+
+				#main-pics{
+					background-color: #ebf2d3;
+					padding-top: 180px;
+					padding-bottom: 50px;
+
+				}
+
+				#guitar-center{
+					  float: left;
+					  width: 33.33%;
+					  padding: 35px;
+					}
+
+					/* Clearfix (clear floats) */
+					.row::after {
+					  content: "";
+					  clear: both;
+					  display: table;
+
+					}
+
+					* {
+					  box-sizing: border-box;
+					}
+
+
+					@media screen and (max-width: 500px) {
+					  #guitar-center {
+					    width: 100%;
+					  }
+					}
+
+				.music{
+					font-family: 'Permanent Marker', cursive;
+				}
+
+				
+				#features{
+					margin-top: 100px;
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					background-color: #D8D8D8;
+					width: 100%;
+					margin: 0 auto;
+					padding: 55px 10px;
+
+				}
+
+				#features .text-box{
+					display: flex;
+					flex-direction: column;
+					width: calc(100% / 4);
+					padding: 30px 10px;
+					width: 240px;
+					margin: 0 auto;
+
+				
+			
+				}
+
+				#features .text-box h3{
+					text-align: center;
+					margin-bottom: 30px;
+					display: flex;
+					justify-content: center;
+				}
+
+				#features .fa{
+					
+						width: 20vw;
+						display: flex;
+						margin-bottom: -25px;
+						color: saddlebrown;
+						/*align-items: center;*/
+						/*display: flex;
+						justify-content: center;*/
+				}
+
+
+				@media (max-width: 560px){
+					#features{
+
+					}
+				}
+
+
+
+				#email{
+					display: flex;
+					height: 200px;
+					margin-top: 20px;
+					text-align: center;
+					justify-content: center;
+					align-items: center;
+					flex-direction: column;
+
+				}
+
+
+				#email .up{
+					margin-bottom: 20px;
+					word-wrap: break-word;
+				}
+
+				#email input[type="email"]{
+					max-width: 275px;
+					width: 100%;
+					padding: 5px;
+					border: 2px silver solid;
+				}
+
+				#email input[type="submit"]{
+					max-width: 150px;
+					width: 100%;
+					height: 40px;
+					margin: 15px 0;
+					background-color: #003366;
+					border-radius: 10px;
+					font-size: 1.1em;
+					font-weight: bold;
+					color: white;
+					border: 0px;
+				}
+
+				#email input[type="submit"]:hover{
+					background-color: #CCCC99;
+					transition: background-color 1s;
+					border-radius: 10px;
+					color: black;
+				}
+
+				#how-it-work{
+					margin-top: 50px;
+					display: flex;
+					justify-content: center;
+				}
+
+
+				#pricing{
+				margin-top: 70px;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				}
+
+
+				#pricing #electric-guitar{
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					text-align: center;
+					width: calc(100% / 3);
+					margin: 5px;
+					border: 1px solid #9e9b98;
+					border-radius: 10px;
+
+				}
+
+
+
+				#pricing #electric-guitar .level{
+					background-color: #999897;
+					color: black;
+					padding: 15px 0;
+					width: 100%;
+					text-transform: uppercase;
+					font-weight: 700;
+					border-top-right-radius: 10px;
+					border-top-left-radius: 10px;
+				}
+
+					#pricing #electric-guitar h2{
+						margin-top: 15px;
+						color: #d91f0e;
+					}
+
+					#pricing #electric-guitar .image{
+						margin: 15px 0;
+					}
+
+					#pricing #electric-guitar .image img{
+						padding: 5px 0;
+					}
+
+
+				.pics{
+					max-width: 250px;
+					width: 100%;
+					height: 100%;
+				}
+
+				#features .icon{
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					height: 125px;
+					width: 20vw;
+					color: darkorange;
+				}
+
+				 .btn{
+					padding: 0px 20px;
+					height: 40px;
+					font-size: 1em;
+					text-transform: uppercase;
+					border: 3px black solid ;
+					border-radius: 2px;
+					background: transparent;
+					cursor: pointer;
+					color: #d91f0e;
+				}
+
+
+				#pricing #electric-guitar button{
+					border: 0;
+					margin: 15px 0;
+					background-color: silver;
+					font-weight: bold;
+				}
+
+				#pricing #electric-guitar button:hover, #pricing #electric-guitar button:hover, #pricing #electric-guitar button:hover{
+					background-color: lightblue;
+					transition: background-color: 1s;
+				}
+
+				footer{
+					
+					background-color: #666666;
+					padding: 50px;
+					position: absolute;
+					width: 100%;
+					bottom: 0;
+					left: 0;
+				}
+
+				footer ul{
+					display: flex;
+					justify-content: flex-end;
+				}
+
+				footer ul li{
+					padding: 0 10px;
+					color: white;
+					font-size: 1.2em;
+				}
+
+				footer span{
+					margin-top: 5px;
+					display: flex;
+					justify-content: flex-end;
+					font-size: 0.9em;
+					color: white;
+					font-weight: 900;
+				}
+
+				a{
+					color: white;
+					text-decoration: none;
+				}
+
+				/* media query*/
+
+				@media (max-width: 600px){
+					header{
+						flex-wrap: wrap;
+					}
+				}
+
+				@media (max-width: 650px){
+					.logo{
+						margin-top:25px;
+						width: 100%;
+						position: relative;
+					}
+				}
+
+				@media (max-width: 650px){
+					.logo img{
+						margin: 0 auto;
+					}
+				}
+
+					@media (max-width: 650px) {
+				  	nav {
+					    margin-top: 10px;
+					    width: 100%;
+					    display: flex;
+					    flex-direction: column;
+					    align-items: center;
+					    text-align: center;
+					    padding: 0 50px;
+
+				  		}
+					  nav li {
+					    padding-bottom: 5px;
+				  		}
+					}
+
+						@media (max-width: 650px) {
+						  nav ul {
+						    flex-direction: column;
+						    padding-bottom: 20px;
+						  }
+						}
+
+
+
+
+
+				@media (max-width: 800px){
+					#img-center{
+						flex-direction: column;
+					}
+				}
+
+
+
+
+
+					@media (max-width: 800px) {
+					  #pricing {
+					    flex-direction: column;
+					  }
+					  #pricing #electric-guitar {
+					    max-width: 300px;
+					    width: 100%;
+					    margin: 0 auto;
+					    margin-bottom: 10px;
+					  }
+					}
+
+
+
+
+					@media (max-width: 800px) {
+					  #features {
+					    flex-direction: column;
+					  }
+					  #features #text-box {
+					    max-width: 300px;
+					    width: 100%;
+					    margin: 0 auto;
+					    margin-bottom: 10px;
+					  }
+					}
+
+				</style>
+</head>
+<body>
+<div id="main-container">
+
+		<header id="header">
+			<div class="logo">
+				<img id="img-header" src="image/kaguitar.png" alt="this is header's image">
+				<p class="music">Music Center</p>
+			</div>
+			<nav id="nav-bar">
+				<ul>
+					<li><a class="nav-link" href="#how-it-work">How It Work</a></li>
+					<li><a class="nav-link" href="#guitar-center">Guitars</a></li>
+					<li><a class="nav-link" href="#features">Features</a></li>
+					<li><a class="nav-link" href="#pricing">Pricing</a></li>
+				</ul>
+			
+			</nav>
+
+		</header>
+
+			<div id="main-pics">
+				<div class="row">
+					<div id="guitar-center">
+					
+						<img  src="image/guitar33.png" alt="image1" style="width:100%">
+					</div>
+
+					<div id="guitar-center">
+						<img  src="image/guitar2.png" alt="image1" style="width: 100%">
+					</div>
+					
+					<div id="guitar-center">
+						<img src="image/guitar3.png" alt="image1" style="width:100%">
+			
+					</div>
+				</div>
+			</div>
+
+
+
+	<!-- container begins here-->
+	<div id="container">
+			<div id="features">
+					
+			         <div class="text-box">
+			         	<i class="fa fa-2x fa-thumbs-up"></i>
+
+		         		
+						<h3>Quality</h3>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown  </p>
+						
+				    </div>
+				
+			
+				
+					<div class="text-box">
+							<i class="fa fa-2x fa-truck"></i>
+					
+					
+						<h3>Shipping</h3>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown  </p>
+					</div>
+				
+
+				
+					<div class="text-box">
+							<i class="fa fa-2x fa-graduation-cap"></i>
+					
+					
+						<h3>Guitar Lesson</h3>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown  </p>
+					</div>
+				
+					
+				
+					<div class="text-box">
+							<i class="fa fa-2x fa-headphones"></i>
+					
+					
+						<h3>Customer Service</h3>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy te  </p>
+					</div>
+		
+			</div><!--end features-->
+
+					<section id="how-it-work">
+						<iframe width="560" height="349" src="http://www.youtube.com/embed/eJ0fVGA0pOo" frameborder="0" allowfullscreen></iframe>
+					</section>
+
+	
+
+				<section id="pricing">
+					<div id="electric-guitar">
+		   				<div class="level">
+		   					Fender Stratocaster
+		   				</div>
+		   				<h2>$850.00 (20% Off)</h2>
+			   			<div class="image">
+			   				<img class="pics" src="image/guitar33.png" alt="electric guitar">
+			   			</div>
+		   				<button class="btn">Buy Now</button>
+		   			</div>
+
+		   			<div id="electric-guitar">
+					    <div class="level">
+					        Gibson
+					    </div>
+					      <h2>$1200.00 (20% Off)</h2>
+						<div class="image">
+					      <img class="pics" src="image/guitar2.png" alt="electric guitar">
+						</div>
+					      <button class="btn">Buy Now</button>
+		    		</div>
+
+		   			<div id="electric-guitar">
+		   				<div class="level">
+		   					Telescaster
+		   				</div>
+		   					<h2>$950.00 (20% Off)</h2>
+		   				<div class="image">
+		   					<img class="pics" src="image/guitar3.png" alt="electric guitar">
+		   				</div>
+		   				<button class="btn">Buy Now</button>
+		   			</div>
+
+				</section>
+
+				<section id="email">
+				   		<h3 class="up">Receive Our Pomotional Codes</h3>
+				   		<!-- <br> -->
+		   			<form id="form" action="https://www.freecodecamp.com/email-submit">
+			   			<input type="email" name="email address" placeholder="Enter your email" required="">
+			   			<input type="submit" value="Submit">
+	   				</form>
+	   			</section>
+
+
+		   		<!-- <footer>
+			   		<ul>
+			   			<li><a href="#">Privacy</a></li>
+			   			<li><a href="#">Term</a></li>
+			   			<li><a href="#">Contact</a></li>
+			   		</ul>
+			   		<span>Coyright 2019, Original Music Center</span> -->
+		   		
+    </div><!--end contianer-->
+
+    <footer>
+			   		<ul>
+			   			<li><a href="#">Privacy</a></li>
+			   			<li><a href="#">Term</a></li>
+			   			<li><a href="#">Contact</a></li>
+			   		</ul>
+			   		<span>Coyright 2019, Original Music Center</span>
+	</footer>
+</div>
+
+</body>
+</html>
