@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>	
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Orbitron|Righteous');
+
+
+html,body {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.myName{
+
+	font-family: 'Abril Fatface', cursive;
+	font-family: 'Orbitron', sans-serif;
+	font-family: 'Righteous', cursive;
+	font-size: 2.5em;
+}
+
+.intro .webdev{
+	font-size: 1.5em;
+	color: red;
+	text-decoration: underline;
+}
+
+.intro {
+  top: 0;
+  min-height: 55vh;
+  padding-top: 45vh;
+	}
+
+.intro::after{
+  content: "";
+  background: url(port-pic.jpg);
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
+}
+
+.intro p {
+  color: green;
+}
+
+nav ul {
+  text-align: right;
+  position: fixed;
+  width: 100%;
+  background-color: #22313F;
+  border-bottom: 6px solid gray;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 55px;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: green;
+}
+
+.work {
+  padding-top: 60px;
+  margin-top: -60px;
+}
+
+.work .work-header {
+  margin-top: 50px;
+  color: #008080;
+  font-weight: normal;
+}
+
+.project {
+  text-decoration: none;
+  color: #008080;
+  display: inline-block;
+  overflow: hidden;
+  border: 2px solid lightblue;
+  height: 220px;
+  width: 280px;
+  margin: 40px 100px;
+ 
+}
+
+.project-pic {
+  width: 100%;
+  height: 180px;
+  border-bottom: 2px solid lightblue;
+}
+
+.project-title {
+  font-weight: bold;
+}
+
+.show-all {
+  text-decoration: none;
+  display: block;
+  width: 200px;
+  height: 30px;
+  margin: 20px auto 90px;
+   background: #e0ebe8;
+  color: #008080;
+  font-weight: bold;
+  font-size: 1em;
+  border: 2px solid #90C695;
+  border-radius: 4px;
+  cursor: pointer;
+  padding-top:10px;
+}
+
+
+.show-all:hover {
+  background: #E4F1FE;
+  color: green;
+}
+
+@media only screen and (max-width: 500px) {
+  nav ul {
+    text-align: center;
+  }
+  nav ul li {
+    margin: 20px;
+  }
+  .project {
+    margin: 40px 0;
+  }
+}
+
+.contact {
+  background: #B0C4DE;
+  padding-bottom: 160px;
+}
+
+.header {
+  padding: 160px 0 110px;
+}
+
+.contact-details {
+  display: inline-block;
+  font-weight: bold;
+  margin: 0 35px 45px 35px;
+  list-style-type: none;
+  border: 2px solid #90C695;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  background: #e0ebe8;
+  color: #008080;
+  text-decoration: none;
+}
+
+.contact-details:hover {
+  background: #E4F1FE;
+  color: green;
+}
+
+footer {
+  padding: 20px;
+  background: #22313F;
+  color: white;
+  line-height: 40px;
+}
+
+footer a {
+  color: white;
+}
+
+@media only screen and (max-width: 367px) {
+  /*    #contact{
+    min-height:1100px;
+  } */
+  .contact-details {
+    border: 2px solid #90C695;
+    border-radius: 0;
+    width: 90px;
+    height: 20px;
+    padding: 10px;
+    line-height: normal;
+  }
+}
+	</style>
+</head>
+<body>
+<nav>
+	<ul id="navbar">
+		<li><a href="#welcome-section">About</a></li>
+		<li><a href="#projects">Work</a></li>
+		<li><a href="#contact">Contact</a></li>
+	</ul>
+</nav>
+
+<div id="welcome-section" class="intro">
+	
+	<h1 class="myName">Lal Pek Mawia</h1>
+	<p class="webdev">a Web Developer</p>
+
+</div>
+
+<div id="projects" class="work">
+	<h2 class="work-header">These are some of my projects...</h2>
+		<a href="https://codepen.io/MiZoCoder2016/full/PVEQbX" target="_blank" class="project project-tile">
+			<img class="project-pic" src="https://github.com/mawiaweb/web-development/blob/master/image/image-3.png?raw=true" alt="project">
+    			<div class="project-title" id="about">Tribute Page</div>
+    	</a>
+
+    	<a href="https://codepen.io/MiZoCoder2016/full/darawV" target="_blank" class="project project-tile">
+    		<img class="project-pic" src="https://github.com/mawiaweb/web-development/blob/master/image/image-4.png?raw=true" alt="project">
+    			<div class="project-title">Survey Form</div>
+    	</a>
+
+    	<a href="https://codepen.io/MiZoCoder2016/full/pYWWwx" target="_blank" class="project project-tile">
+    		<img class="project-pic" src="https://github.com/mawiaweb/web-development/blob/master/image/image-2.png?raw=true" alt="project">
+    			<div class="project-title">Product Landing Page</div>	
+    	</a>
+
+    	<a href="https://codepen.io/MiZoCoder2016/full/YgLopo" target="_blank" class="project project-tile">
+    		<img class="project-pic" src="https://github.com/mawiaweb/web-development/blob/master/image/image-1.png?raw=true" alt="project">
+    			<div class="project-title">Technical Documentation Page</div>
+  		</a>
+
+
+  		<a href="https://codepen.io/dashboard/" class="show-all" target="_blank">Show all</a>
+
+</div>
+
+
+<div id="contact" class="contact">
+		  <div class="header">
+		    <h1>Let's work together...</h1>
+		  </div>
+		  <a href="#" class="contact-details">Facebook</a>
+		  <a id='profile-link' href="https://github.com/mawiaweb/web-development" target="_blank" class="contact-details">GitHub</a>
+		  <a href="#" target="_blank" class="contact-details">Twitter</a>
+		  <a href="#" class="contact-details">Send a mail</a>
+		  <a href="#" class="contact-details">Call me</a>
+</div>
+	<footer>All the projects I have completed are on my personal portfolio
+  		<p>&copy; Created for <a href="https://www.freecodecamp.org/" target="_blank">FreeCodeCamp</a></p>
+	</footer>
+</body>
+</html>
